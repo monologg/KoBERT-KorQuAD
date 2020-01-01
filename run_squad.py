@@ -397,7 +397,6 @@ def evaluate(args, model, tokenizer, prefix=""):
             args.verbose_logging,
             args.version_2_with_negative,
             args.null_score_diff_threshold,
-            tokenizer,
         )
 
     # Compute the F1 and exact scores.
