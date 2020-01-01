@@ -1,8 +1,8 @@
 #!/bin/bash
 python3 run_squad.py \
-    --model_type distilkobert \
-    --model_name_or_path monologg/distilkobert \
-    --output_dir distilkobert_output \
+    --model_type mbert \
+    --model_name_or_path bert-base-multilingual-cased \
+    --output_dir mbert_output \
     --do_train \
     --do_eval \
     --per_gpu_train_batch_size 32 \
