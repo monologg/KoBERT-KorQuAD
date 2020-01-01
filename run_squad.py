@@ -202,10 +202,11 @@ def train(args, train_dataset, model, tokenizer):
             inputs = {
                 "input_ids": batch[0],
                 "attention_mask": batch[1],
-                "token_type_ids": None if args.model_type in ["xlm", "roberta", "distilbert"] else batch[2],
                 "start_positions": batch[3],
                 "end_positions": batch[4],
             }
+            if args.model_type in ["xlm", "roberta", "distilbert", "distilkobert"]:
+                inputs["token_type_ids"] = batch[2]
 
             if args.model_type in ["xlnet", "xlm"]:
                 inputs.update({"cls_index": batch[5], "p_mask": batch[6]})
@@ -311,9 +312,11 @@ def evaluate(args, model, tokenizer, prefix=""):
             inputs = {
                 "input_ids": batch[0],
                 "attention_mask": batch[1],
-                "token_type_ids": None if args.model_type in ["xlm", "roberta", "distilbert"] else batch[2],
             }
             example_indices = batch[3]
+
+            if args.model_type in ["xlm", "roberta", "distilbert", "distilkobert"]:
+                inputs["token_type_ids"] = batch[2]
 
             # XLNet and XLM use more arguments for their predictions
             if args.model_type in ["xlnet", "xlm"]:
@@ -574,9 +577,9 @@ def main():
         "--do_lower_case", action="store_true", help="Set this flag if you are using an uncased model."
     )
 
-    parser.add_argument("--per_gpu_train_batch_size", default=32, type=int, help="Batch size per GPU/CPU for training.")
+    parser.add_argument("--per_gpu_train_batch_size", default=16, type=int, help="Batch size per GPU/CPU for training.")
     parser.add_argument(
-        "--per_gpu_eval_batch_size", default=32, type=int, help="Batch size per GPU/CPU for evaluation."
+        "--per_gpu_eval_batch_size", default=16, type=int, help="Batch size per GPU/CPU for evaluation."
     )
     parser.add_argument("--learning_rate", default=5e-5, type=float, help="The initial learning rate for Adam.")
     parser.add_argument(
