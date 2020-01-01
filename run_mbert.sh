@@ -5,5 +5,8 @@ python3 run_squad.py \
     --output_dir mbert_output \
     --do_train \
     --do_eval \
-    --per_gpu_train_batch_size 32 \
-    --per_gpu_eval_batch_size 32 \
+    --per_gpu_train_batch_size 16 \
+    --per_gpu_eval_batch_size 16 \
+    --evaluate_during_training \
+    --logging_steps 2000 \
+    --save_steps 2000
