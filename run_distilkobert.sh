@@ -9,4 +9,5 @@ python3 run_squad.py \
     --per_gpu_eval_batch_size 32 \
     --evaluate_during_training \
     --logging_steps 2000 \
-    --save_steps 2000
+    --save_steps 2000 \
+    --num_train_epochs 7
