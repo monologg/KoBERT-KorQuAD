@@ -1,5 +1,5 @@
 #!/bin/bash
-python3 run_squad.py \
+python run_squad.py \
     --model_type mbert \
     --model_name_or_path bert-base-multilingual-cased \
     --output_dir mbert_output \

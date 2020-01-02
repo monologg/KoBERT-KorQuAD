@@ -1,5 +1,5 @@
 #!/bin/bash
-python3 run_squad.py \
+python run_squad.py \
     --model_type distilkobert \
     --model_name_or_path monologg/distilkobert \
     --output_dir distilkobert_output \
