@@ -48,14 +48,13 @@ from transformers import (
     XLNetForQuestionAnswering,
     XLNetTokenizer,
     get_linear_schedule_with_warmup,
-    squad_convert_examples_to_features,
 )
 from transformers.data.metrics.squad_metrics import (
     compute_predictions_log_probs,
     compute_predictions_logits,
     squad_evaluate,
 )
-from squad import SquadResult, SquadV1Processor, SquadV2Processor
+from squad import SquadResult, SquadV1Processor, SquadV2Processor, squad_convert_examples_to_features
 
 
 try:
@@ -457,6 +456,7 @@ def load_and_cache_examples(args, tokenizer, evaluate=False, output_examples=Fal
             max_query_length=args.max_query_length,
             is_training=not evaluate,
             return_dataset="pt",
+            threads=args.threads
         )
 
         if args.local_rank in [-1, 0]:

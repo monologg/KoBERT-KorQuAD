@@ -253,6 +253,16 @@ def squad_convert_example_to_features(example, max_seq_length, doc_stride, max_q
                 end_position=end_position,
             )
         )
+
+        # for ex_index, f in enumerate(features):
+        #     if ex_index < 5:
+        #         print("*** Example ***")
+        #         print("tokens: %s" % " ".join([str(x) for x in f.tokens]))
+        #         print("input_ids: %s" % " ".join([str(x) for x in f.input_ids]))
+        #         print("attention_mask: %s" % " ".join([str(x) for x in f.attention_mask]))
+        #         print("token_type_ids: %s" % " ".join([str(x) for x in f.token_type_ids]))
+        #         print("start_position: %d" % f.start_position)
+        #         print("end_position: %d" % f.end_position)
     return features
 
 
