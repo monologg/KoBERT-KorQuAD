@@ -35,13 +35,12 @@ $ python3 run_squad.py --model_type kobert \
                        --train_file KorQuAD_v1.0_train.json \
                        --predict_file KorQuAD_v1.0_dev.json \
                        --evaluate_during_training \
-                       --per_gpu_train_batch_size 16 \
-                       --per_gpu_eval_batch_size 16 \
+                       --per_gpu_train_batch_size 8 \
+                       --per_gpu_eval_batch_size 8 \
                        --max_seq_length 512 \
                        --logging_steps 4000 \
                        --save_steps 4000 \
-                       --do_train \
-                       --do_eval
+                       --do_train
 ```
 
 DistilKoBert는 argument를 아래와 같이 바꿔주면 됩니다
