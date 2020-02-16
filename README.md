@@ -25,6 +25,8 @@ tokenizer = KoBertTokenizer.from_pretrained('monologg/kobert')
 
 ## Usage
 
+코드의 경우 Huggingface Transformers의 example 코드를 가져와 사용하였습니다.
+
 ### 1. Training
 
 ```bash
@@ -43,10 +45,13 @@ $ python3 run_squad.py --model_type kobert \
                        --do_train
 ```
 
-DistilKoBert는 argument를 아래와 같이 바꿔주면 됩니다
+- **train 중간에 진행되는 dev set evaluation에서 official EM/F1 score도 보여주게 하였습니다.**
 
-- --model_type distilkobert
-- --model_name_or_path monologg/distilkobert
+  ![image](https://user-images.githubusercontent.com/28896432/74602385-3da54780-50eb-11ea-9090-22cc9aac1be5.png)
+
+- DistilKoBert의 경우 argument를 아래와 같이 바꿔주면 됩니다
+  - --model_type distilkobert
+  - --model_name_or_path monologg/distilkobert
 
 ### 2. Evaluation
 
