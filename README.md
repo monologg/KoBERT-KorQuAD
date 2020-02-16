@@ -5,8 +5,9 @@
 
 ## Dependencies
 
-- torch>=1.1.0
-- transformers>=2.4.1
+- torch >= 1.1.0
+- transformers >= 2.4.1
+- tensorboardX >= 2.0
 
 ## How to use KoBERT on Huggingface Transformers Library
 
