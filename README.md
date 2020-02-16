@@ -47,7 +47,7 @@ $ python3 run_squad.py --model_type kobert \
 
 - **train 중간에 진행되는 dev set evaluation에서 official EM/F1 score도 보여주게 하였습니다.**
 
-  ![image](https://user-images.githubusercontent.com/28896432/74602385-3da54780-50eb-11ea-9090-22cc9aac1be5.png)
+  ![image](https://user-images.githubusercontent.com/28896432/74602419-9248c280-50eb-11ea-91c9-64a6e00beb2d.png)
 
 - DistilKoBert의 경우 argument를 아래와 같이 바꿔주면 됩니다
   - --model_type distilkobert
