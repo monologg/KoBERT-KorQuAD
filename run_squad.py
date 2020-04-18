@@ -51,6 +51,8 @@ from transformers import (
     XLNetConfig,
     XLNetForQuestionAnswering,
     XLNetTokenizer,
+    ElectraConfig,
+    ElectraTokenizer,
     get_linear_schedule_with_warmup,
     squad_convert_examples_to_features
 )
@@ -68,6 +70,8 @@ try:
 except ImportError:
     from tensorboardX import SummaryWriter
 
+from model import ElectraForQuestionAnswering
+
 logger = logging.getLogger(__name__)
 
 ALL_MODELS = sum(
@@ -84,6 +88,8 @@ MODEL_CLASSES = {
     "albert": (AlbertConfig, AlbertForQuestionAnswering, AlbertTokenizer),
     "kobert": (BertConfig, BertForQuestionAnswering, KoBertTokenizer),
     "distilkobert": (DistilBertConfig, DistilBertForQuestionAnswering, KoBertTokenizer),
+    "koelectra-base": (ElectraConfig, ElectraForQuestionAnswering, ElectraTokenizer),
+    "koelectra-small": (ElectraConfig, ElectraForQuestionAnswering, ElectraTokenizer),
 }
 
 
